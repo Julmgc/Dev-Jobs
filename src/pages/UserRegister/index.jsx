@@ -16,7 +16,7 @@ import Header from '../../components/Header';
 
 
 const Register = () => {
-  const PasswordStrength = (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])/);
+  const PasswordStrength = (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/);
   const NameValidation = (/^[a-z][a-z\s]*$/i);
   const PhoneValidation = (/^\([0-9]{2}\)[0-9]{5}-[0-9]{4}/)
   const { setUserToken } = useToken();
@@ -42,7 +42,7 @@ const Register = () => {
         .string()
         .min(6, 'Minimum 6 digits')
         .required('Required field')
-        .matches(PasswordStrength, 'Weak password, use lowercase, uppercase, numbers and symbols.'),
+        .matches(PasswordStrength, 'Use lowercase, uppercase, and numbers.'),
     linkedinProfile: yup
         .string(),
     address: yup
