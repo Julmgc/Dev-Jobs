@@ -15,7 +15,7 @@ export const TokenProvider = ({ children }) => {
       const { sub } = decoded;
       localStorage.setItem("@DevJobs:User:Id", sub);
     }
-  }, []);
+  });
 
   const handleLogout = () => {
     localStorage.clear();
